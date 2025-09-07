@@ -12,7 +12,6 @@ body {
     align-items: start;
   }
   
-  /* Left column */
 .left-column img {
     max-width: 100%;
     height: auto;
@@ -59,4 +58,33 @@ a:hover {
     color: #c43ea1;
 }
 
+@media (max-width: 768px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr; /* single column */
+      gap: 1.5rem;
+      padding: 3rem;
+    }
+  
+    /* Reverse order: right-column first, left-column second */
+    .right-column {
+      order: 1;
+    }
+  
+    .left-column {
+      order: 2;
+      margin: 0 auto; /* optional: center the image */
+      max-width: 70%;
+    }
 
+    .left-column img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        position: relative;
+        display: block;
+        box-shadow: none;
+        outline: solid 2px white;
+        outline-offset: 0.7rem;
+    }
+}
